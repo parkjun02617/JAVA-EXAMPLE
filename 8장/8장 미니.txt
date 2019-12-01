@@ -1,0 +1,31 @@
+import javax.swing.*;
+import java.awt.*;
+public class MP8 extends JFrame{
+	private String[] labels= {"Backspace","","","CE","C","7","8","9","/","sqrt",
+			"4","5","6","x","%","1","2","3","-","1/x","0","+/-",".","+","="};
+	public MP8() {
+		setSize(1000,700);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setTitle("MyFrame");	
+		JPanel panel=new JPanel();
+		JPanel panelA=new JPanel();
+		JPanel panelB=new JPanel();	
+		JTextField field1=new JTextField(50);
+		panelA.add(field1);	
+		JButton[] buttons;
+		add(panelA,BorderLayout.NORTH);
+		add(panelB,BorderLayout.SOUTH);
+		panelB.setLayout(new GridLayout(0,5,1,1));
+		buttons=new JButton[25];	
+		for(int rows=0; rows<5; rows++) {
+			for(int cols=0; cols<5; cols++) {
+				int index=5*rows+cols;
+				buttons[index]=new JButton(labels[index]);
+				panelB.add(buttons[index]);
+				buttons[index].setBackground(Color.yellow);
+				index++;}}		
+		panel.add(panelB);
+		add(panel);
+		setVisible(true);}
+	public static void main(String[] args) {
+		MP8 f= new MP8();}}

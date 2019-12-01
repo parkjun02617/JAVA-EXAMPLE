@@ -1,0 +1,31 @@
+public class BankTest {
+	private int balance;
+	
+	public int getBalance() {		return balance;		}
+	public void setBalance(int balance) {		this.balance = balance;		}
+	public BankTest(int a){
+		balance=a;
+		}
+	void transfer(int amount) {
+		if(balance>=amount)
+			balance=balance-amount;
+		else
+			balance=balance+amount;
+	}
+
+
+	public static void main(String[] args) {
+		
+		BankTest obj1 = new BankTest(10000);
+		System.out.println("myAccount1: 현재 잔액은 " + obj1.balance);
+		BankTest obj2 = new BankTest(0);
+		System.out.println("myAccount2: 현재 잔액은 " + obj2.balance);
+		System.out.println("transfer(1000");
+		obj1.transfer(1000);
+		System.out.println("myAccount1: 현재 작액은" + obj1.balance);
+		obj2.transfer(1000);
+		System.out.println("myAccount1: 현재 작액은" + obj2.balance);
+		
+	}
+
+}

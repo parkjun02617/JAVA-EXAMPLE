@@ -1,0 +1,22 @@
+import java.util.*;
+class StringTokenizer{
+	String b;
+	public StringTokenizer(String b) {
+		String[] tokens=b.split(" ");
+		int count=0;
+		for(String token:tokens) {
+			count+=1;
+			System.out.print(token+",");}
+		System.out.println("\n모두"+count+"개의 단어가 있습니다.");
+	}
+}
+
+public class pe74 {
+	public static void main(String[] args) {	
+		Scanner sc=new Scanner(System.in);
+		System.out.print("문자열을 입력하세요.");
+		String a=sc.nextLine();
+		StringTokenizer st=new StringTokenizer(a);
+	}
+
+}

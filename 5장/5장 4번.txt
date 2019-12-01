@@ -1,0 +1,36 @@
+import java.util.*;
+import java.util.Scanner;
+
+class Plane1{
+	String model;
+	int number1, number2;
+	static int planes;
+	
+	
+	public Plane1(String model,int number1, int number2){
+		this.model=model;
+		this.number1=number1;
+		this.number2=number2;
+		planes++;
+	}
+	void print(){
+		System.out.println("½Äº°¹øÈ£ :" + number1 + " ¸ðµ¨ :" +model + " ½Â°´¼ö :" + number2);
+	}
+
+	
+}
+
+
+public class Plane {
+	
+	public static void main(String args[]){
+		Scanner sc = new Scanner(System.in);
+		Plane1 obj1= new Plane1("aa",1,200);
+		obj1. print();
+		Plane1 obj2= new Plane1("bb",2,300);
+		obj2. print();
+		Plane1 obj3= new Plane1("cc",3,150);
+		obj3. print();
+				
+	}
+}

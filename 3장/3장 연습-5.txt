@@ -1,0 +1,21 @@
+package joon;
+
+import java.util.Scanner;
+
+public class J1 {
+	public static void main(String[] args) {
+		
+		int eq;
+		
+		for(int i=0; i<=10; i++)
+		{
+			for(int j=0; j<=10; j++) {
+			eq=(3*i+10*j);
+			if(eq==100)
+				System.out.println(i+","+j);
+		}
+	}
+}
+}
+		
+		

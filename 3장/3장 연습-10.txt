@@ -1,0 +1,27 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Scanner;
+public class Joon4 {
+public static void main(String[]args){
+	Scanner scan=new Scanner(System.in);
+	double[] s = {1.0, 2.0, 3.0, 4.0};
+	double sum=0.0;
+	System.out.println(Arrays.toString(s));
+	for(int i=0; i<s.length; i++)
+	sum+=s[i];
+	System.out.println("합은 :"+sum);
+	double z=s[0];
+	for(int i=1; i<s.length; i++){
+		if  (s[i]>s[i-1]){
+			z=s[i];
+		}
+	}
+		
+		System.out.println("최댓값:" +z);
+
+}
+}
+
+
+// 2016113791 박준영 10번 문제 
+//

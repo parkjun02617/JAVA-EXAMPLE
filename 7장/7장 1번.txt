@@ -1,0 +1,25 @@
+import java.util.*;
+import java.math.*;
+class Die{
+	
+	public Die() {
+		int Die=1;
+	}
+	
+	
+	public int roll() { return (int)(Math.random()*6);}
+	
+	
+	public String toString() {
+		return "현재의 주사위 숫자:"+roll();
+	}
+}
+
+public class pe71 {
+	public static void main(String[] args) {
+	Die obj1=new Die();
+	System.out.println(obj1);
+	}
+	
+
+}

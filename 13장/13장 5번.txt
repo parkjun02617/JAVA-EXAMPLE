@@ -1,0 +1,50 @@
+import java.util.*;
+import java.io.*;
+class hangman{
+
+
+	
+}
+	
+
+public class MP1 {
+	public static void main(String[] args) {
+	String[] words= {"java","count","school","book","student","programmer"};
+	int index=(new Random()).nextInt(words.length);
+	String solution=words[index];
+	
+	
+	
+	System.out.print("현재의 상태:  ");
+	for(int i=0; i<solution.length();i++) {
+		System.out.print("-");
+	}
+	
+	for(int k=0;k<10;k++){
+		StringBuffer answer=new StringBuffer(solution.length());
+		Scanner sc=new Scanner(System.in);
+		System.out.print("\n글자를 추측하시오.");
+		String a=sc.next();
+		String[] tokens=solution.split("");
+	
+		System.out.print("현재의 상태:  ");
+		for(int j=0; j<solution.length();j++) {
+			if(a.equals(tokens[j])) {
+				answer.insert(j,a);}
+				
+			else {
+				if(answer)
+				answer.insert(j,"-");}
+			
+			}		
+		System.out.print(answer);
+		}
+	
+	}
+	}
+	
+
+	
+	
+
+

@@ -1,0 +1,46 @@
+import java.awt.*;
+import java.util.Calendar;
+
+import javax.swing.*;
+
+public class PE145 extends JFrame{
+	private JLabel label;
+	
+	Calendar now=Calendar.getInstance();
+	int hrs=now.get(Calendar.HOUR_OF_DAY);
+	int min=now.get(Calendar.MINUTE);
+	int sec=now.get(Calendar.SECOND);
+	String time=hrs+":"+min+":"+sec;
+	
+	class MyThread extends Thread{
+		public void run() {
+			for(int i=0;i<1000;i++) {
+				Calendar now=Calendar.getInstance();
+				int hrs=now.get(Calendar.HOUR_OF_DAY);
+				int min=now.get(Calendar.MINUTE);
+				int sec=now.get(Calendar.SECOND);
+				String time=hrs+":"+min+":"+sec;
+			try {
+				Thread.sleep(1000);
+			}catch(InterruptedException e) {
+				e.printStackTrace();
+			}
+			label.setText(time+"");
+		}
+	}
+	}
+	public PE145() {
+		setTitle("CLOCK");
+		setSize(400,200);
+		label=new JLabel();
+		label.setFont(new Font("Serif",Font.BOLD,100));
+		add(label);
+		setVisible(true);
+		(new MyThread()).start();
+		
+	}
+	public static void main(String[] args) {
+		PE145 t=new PE145();
+	}
+
+}

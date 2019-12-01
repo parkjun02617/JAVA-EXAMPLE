@@ -1,0 +1,26 @@
+import java.util.*;
+class score{
+	int x;
+	public score(int x) {
+		this.x=x;
+	}
+}
+public class PE128 {
+	public static void main(String[] args) {
+		ArrayList<Double> list=new ArrayList<>();
+		Scanner sc=new Scanner(System.in);
+		for(int i=0;i<10;i++) {
+			System.out.print("심사위원의 점수 :");
+			double a=sc.nextDouble();
+			list.add(a);}
+		
+		Collections.sort(list);
+		System.out.print(list);
+		double sum=0;
+		for(int j=1;j<9;j++) {
+			double b=list.get(j);
+			sum+=b;
+		}
+		System.out.println("점수의 합:"+sum);
+	}
+}

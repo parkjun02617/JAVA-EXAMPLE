@@ -1,0 +1,28 @@
+import java.util.*;
+
+public class PE124 {
+	Set<String> s1;
+	Set<String> s2;
+	Set<String> s3;
+	
+	public void hop(Set<String> s1, Set<String> s2){
+		Set<String> s3=s1;
+		s1.addAll(s2);
+		System.out.println("합칩합: "+s1);
+	}
+	public void kyo(Set<String> s1, Set<String> s2){
+		s3.addAll(s2);
+		System.out.println("교집합: "+s3);
+	}
+	public static void main(String[] args) {
+		Set<String> s1=new HashSet<>(Arrays.asList("A","B","C"));
+		Set<String> s2=new HashSet<>(Arrays.asList("A"));
+		PE124 a=new PE124();
+		PE124 b=new PE124();
+		
+		a.hop(s1,s2);
+		b.kyo(s1,s2);
+		안돼!!
+		
+	}
+}

@@ -1,0 +1,24 @@
+package joon;
+
+import java.util.Scanner;
+
+public class J1 {
+	public static void main(String[] args) {
+		int computer = (int)(Math.random()*10);
+		Scanner sc = new Scanner(System.in);
+		int answer;
+		int a=0; //시도횟수를 처음에는 0으로 설정
+		do {
+		System.out.println("정답을 추측하여 보시오:  ");
+		answer = sc.nextInt();
+		a=a+1; //시도횟수가 do-while 문에 의하여 점점 올라간다.
+				
+		if(answer>computer) { System.out.println("높습니다");}
+		else if(answer==computer) { System.out.println("같습니다");}
+		else { System.out.println("낮습니다");}
+		sc.close();
+	}while(answer!=computer); //answer와 computer가 같지 않을 경우 do문을 계속해서 반복한다.
+		System.out.println("시도횟수는" + a);
+	}
+	}
+

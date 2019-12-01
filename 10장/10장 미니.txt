@@ -1,0 +1,96 @@
+import java.io.*;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+public class MP10 extends JFrame implements ActionListener{
+	class WelcomePanel extends JPanel
+	{	private JLabel message;
+		public WelcomePanel() {
+			message=new JLabel("자바 피자에 오신것을 환영합니다.");
+			add(message);}}
+	class TypePanel extends JPanel
+	{	private JRadioButton combo, potato, bulgogi;
+		public TypePanel()
+		{	setLayout(new GridLayout(3,1));
+			combo=new JRadioButton("콤보",true);
+			potato=new JRadioButton("포테이토");
+			bulgogi=new JRadioButton("불고기");
+			ButtonGroup bg=new ButtonGroup();
+			bg.add(combo);
+			bg.add(potato);
+			bg.add(bulgogi);
+			setBorder(BorderFactory.createTitledBorder("종류"));
+			add(combo);
+			add(potato);
+			add(bulgogi);}}
+	class ToppingPanel extends JPanel
+	{private JRadioButton pmang, cheese, peperonni, bacon;
+		public ToppingPanel(){
+			setLayout(new GridLayout(4,1));
+			pmang=new JRadioButton("피망",true);
+			cheese=new JRadioButton("치즈");
+			peperonni=new JRadioButton("페페로니");
+			bacon=new JRadioButton("베이컨");
+			ButtonGroup bg=new ButtonGroup();
+			bg.add(pmang);
+			bg.add(cheese);
+			bg.add(peperonni);
+			bg.add(bacon);
+			setBorder(BorderFactory.createTitledBorder("추가토핑"));
+			add(pmang);
+			add(cheese);
+			add(peperonni);
+			add(bacon);}}
+	class SizePanel extends JPanel
+	{	private JRadioButton small, medium, large;
+		public SizePanel()
+		{	setLayout(new GridLayout(3,1));
+			small=new JRadioButton("Small",true);
+			medium=new JRadioButton("Medium");
+			large=new JRadioButton("Large");
+			ButtonGroup bg=new ButtonGroup();
+			bg.add(small);
+			bg.add(medium);
+			bg.add(large);
+			setBorder(BorderFactory.createTitledBorder("크기"));
+			add(small);
+			add(medium);
+			add(large);}}
+	private JPanel panel;
+	private JButton button1,button2;
+	private JTextField field1;
+	public MP10() 
+	{	setTitle("피자주문");
+		setSize(600,300);
+		panel=new JPanel();
+		button1=new JButton("주문");
+		button2=new JButton("취소");
+		field1=new JTextField(10);
+		field1.setEditable(false);
+		panel.add(button1);
+		panel.add(button2);
+		panel.add(field1);
+		button1.addActionListener(this);
+		button2.addActionListener(this);
+		add(new WelcomePanel(),BorderLayout.NORTH);
+		add(new TypePanel(),BorderLayout.WEST);
+		add(new ToppingPanel(),BorderLayout.CENTER);
+		add(new SizePanel(),BorderLayout.EAST);
+		add(panel,BorderLayout.SOUTH);
+		setVisible(true);}
+	public static void main(String[] args) {
+		MP10 f=new MP10();
+		}
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource()==button1){
+			field1.setText("20000");}
+		else
+			field1.setText(null);}}
+
+
+	
+		
+
+
+
+

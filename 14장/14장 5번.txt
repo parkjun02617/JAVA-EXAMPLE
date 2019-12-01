@@ -1,0 +1,76 @@
+import java.awt.*;    
+
+import java.awt.event.*;    
+
+import java.util.*;
+
+public class  Ex1 extends Frame implements Runnable{
+
+       Label lbl;
+
+       public Ex1(){
+
+             lbl=new Label("시간표시");
+
+             add(lbl);
+
+             setSize(400,150);
+             lbl.setFont(new Font("Serif",Font.BOLD,100));
+
+             setVisible(true);
+
+             //Thread t=new Thread(this);
+
+             //t.start();
+
+             new Thread(this).start();
+
+             addWindowListener(new WindowAdapter(){
+
+                    public void windowClosing(WindowEvent w){
+
+                           System.exit(0);
+
+                    }
+
+             });
+
+       }
+
+       public void run(){
+
+             while(true)  {
+
+                    display();
+
+                    try{
+
+                           Thread.sleep(1000);
+
+                    }catch(Exception ex){}
+
+             }
+
+       }
+
+       public void display(){
+
+             Calendar now=Calendar.getInstance();
+
+             int hrs=now.get(Calendar.HOUR_OF_DAY);
+
+             int min=now.get(Calendar.MINUTE);
+
+             int sec=now.get(Calendar.SECOND);
+
+             lbl.setText(hrs+":"+min+":"+sec);
+
+       }
+
+       public static void main(String[] args){
+
+             new Ex1();
+
+       }
+
+}

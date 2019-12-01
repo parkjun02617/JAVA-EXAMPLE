@@ -1,0 +1,28 @@
+package name;
+import java.util.Scanner;
+
+public class qwer {
+	
+	public static void main(String[ ] args)
+	{
+		double money;
+		double price;
+		double a;
+		double b;
+		
+		Scanner input = new Scanner(System.in);
+		System.out.println("받은 돈을 입력하시오 : ");
+		money=input.nextDouble();
+
+		System.out.println("상품 가격을 입력하시오 : ");
+		price=input.nextDouble ();
+		
+		a=0.1*price;
+		b=(money-price);
+		System.out.println(" 부가세 : " + a );
+		System.out.println(" 잔돈 : " + b);
+		
+		
+		
+	}
+}

@@ -1,0 +1,37 @@
+
+public class Ex3 {
+	
+	int year;
+	String month1;
+	int month;
+	int day;
+		
+	void print1(){
+		System.out.print(year+".");
+		System.out.print(month+".");
+		System.out.print(day+".");
+		System.out.println();
+	}
+	void print2 (){
+		System.out.print(month1+" ");
+		System.out.print(day+", ");
+		System.out.print(year);
+	}
+	public Ex3(int a, int b, int c){ //a,b,c 를 초기화해준다.
+		year=a;
+		month=b;
+		day=c;
+	}
+	public Ex3(String a, int b, int c){
+		month1=a;
+		year=b;
+		day=c;
+	}
+
+	public static void main(String[] args){
+	Ex3 obj1 = new Ex3(2012,9,5);
+	obj1.print1();
+	Ex3 obj2 = new Ex3("July",12,2012);// EX1에 초기화된 값을 입력해준다.
+	obj2.print2(); // 입력해준 값을 print 한다.
+}
+}

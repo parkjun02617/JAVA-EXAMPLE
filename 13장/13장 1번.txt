@@ -1,0 +1,20 @@
+import java.io.*;
+public class PE131 {
+	public static void main(String[] args) throws Exception{
+		
+		try(FileReader fr=new FileReader("D:\\test.txt")){
+			int ch;		
+			char c;
+			while((ch=fr.read())!=-1) {
+				c=(char)ch;
+				if(Character.isLowerCase(c)) {
+					c=Character.toUpperCase(c);}
+				
+				System.out.print(c);}
+			
+			}catch(IOException e) {
+				e.printStackTrace();
+			}
+		
+	}
+}

@@ -1,0 +1,46 @@
+import java.io.*;
+import java.util.*;
+public class kdh2 {
+public static void main(String[] args) throws IOException{
+      int i=0;
+      Scanner scan=new Scanner(System.in);
+      System.out.print("이름:");
+      String a=scan.nextLine();
+      System.out.print("전화번호:");
+      String b=scan.nextLine();
+      System.out.print("이메일:");
+      String c=scan.nextLine();
+      
+      File f=new File("list1.txt");
+      PrintWriter output=new PrintWriter(f);      
+      output.print(a);output.print(" "+b);output.println(" "+c);
+      output.close();
+      
+      Scanner scan1=new Scanner(System.in);
+      System.out.print("이름:");
+      String a1=scan.nextLine();
+      System.out.print("전화번호:");
+      String b1=scan.nextLine();
+      System.out.print("이메일:");
+      String c1=scan.nextLine();
+      
+      File f1=new File("list2.txt");
+      PrintWriter output1=new PrintWriter(f1);      
+      output1.print(a1);output1.print(" "+b1);output1.println(" "+c1);
+      output1.close();
+      
+      Scanner scan2=new Scanner(System.in);
+      System.out.print("번호을 입력하세요.");
+      int a3=scan2.nextInt();
+      
+      if(a3==1){
+         FileReader fr=new FileReader("list1.txt");
+         System.out.print(b);
+         fr.close();}
+      if(a3==2){
+         FileReader fr=new FileReader("list2.txt");
+         System.out.print(b1);
+         fr.close();}
+
+   }
+}

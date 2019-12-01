@@ -1,0 +1,24 @@
+import java.util.Arrays;
+import java.util.Scanner;
+public class Joon3 {
+public static void main(String[]args){
+	Scanner scan=new Scanner(System.in);
+	int size;
+	int sum=0;
+	System.out.println("방의 개수를 입력하시오 :");
+	size = scan.nextInt();
+	int [] s= new int[size];
+	System.out.println("정수" + size + "개를 입력하시오");
+	
+	for(int i=0; i<s.length; i++){
+	System.out.print(i+1+"번째 정수 입력 :");
+	s[i]=scan.nextInt();
+	sum+=s[i];
+	
+	}
+	System.out.println(Arrays.toString(s));
+	System.out.print("\n합계 : "+sum);
+
+}
+}	
+

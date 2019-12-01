@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+ 
+
+public class Q4 {
+
+public static void main(String[] args){
+
+	double a;
+
+	Scanner input = new Scanner(System.in);
+
+	System.out.println("키를 입력하시오 :");
+
+	double ki = input.nextDouble();
+
+	System.out.println("몸무게를 입력하시오:");
+
+	double weight = input.nextDouble();
+
+	a=(ki-100)*0.9;
+
+	
+
+	if(a<weight)
+
+		System.out.println("과체중입니다.");
+
+	else
+
+		System.out.println("저체중입니다.");
+
+}
+
+}

@@ -1,0 +1,16 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Scanner;
+public class Joon5 {
+public static void main(String[]args){
+	Scanner scan=new Scanner(System.in);
+	ArrayList<String> list=new ArrayList<>();
+	list.add("Hello");
+	list.add("Java");
+	list.add("World");
+	for(String obj:list)
+		System.out.print(obj+"\n");
+}
+}
+	
+// 2016113791 박준영 11번문제 

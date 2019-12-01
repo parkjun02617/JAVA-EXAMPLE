@@ -1,0 +1,33 @@
+
+public class Ex5 {
+	int balance;
+	void withdraw(int amount){ // 출금함수
+		if(balance>=amount){
+			balance=balance-amount;
+			System.out.println(+amount+"원 인출");}
+		else
+			System.out.println("잔액부족");
+		}
+	
+	void deposit(int amount){
+		balance=balance+amount;
+		System.out.println(+amount+"원 적금");
+		
+	}
+	
+	public Ex5(){
+		balance=0;
+		System.out.println("새로운 계좌가 만들어졌습니다.");
+	}
+	
+	public static void main(String[] args){
+		Ex5 obj1=new Ex5();
+		obj1.deposit(50000);
+		Ex5 obj2=new Ex5();
+		obj2.deposit(100000);
+		System.out.println("고객 #1"+ "계좌 잔고"+ "=" + obj1.balance);
+		System.out.println("고객 #2"+ "계좌 잔고"+ "=" + obj2.balance);
+		
+	}
+
+}

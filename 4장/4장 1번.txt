@@ -1,0 +1,21 @@
+
+public class Ex1 {
+	String name;
+	int rollno;
+	int age;
+	void print(){
+		System.out.println("학생의 이름: " + name);
+		System.out.println("학생의 학번 : " + rollno);
+		System.out.println("학생의 나이 : " + age);
+	}
+	public Ex1(String a, int b, int c){ //a,b,c 를 초기화해준다.
+		name=a;
+		rollno=b;
+		age=c;
+	}
+
+	public static void main(String[] args){
+	Ex1 obj = new Ex1("Kim",20180001,20); // EX1에 초기화된 값을 입력해준다.
+	obj.print(); // 입력해준 값을 print 한다.
+}
+}

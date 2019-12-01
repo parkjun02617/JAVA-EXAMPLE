@@ -1,0 +1,65 @@
+import javax.swing.*;
+import java.awt.event.*;
+import java.awt.*;
+
+public class EX4 extends JFrame {
+	private JButton button;
+	private JLabel label1,label2,label3;
+	private JTextField text, text2, result;
+	
+
+
+	
+	
+	public EX4() {
+		
+		this.setSize(400,150);
+		this.setTitle("이자 계산기");
+		
+		ButtonListener listener = new ButtonListener();
+		
+		
+		JPanel panel  = new JPanel();
+		label1 = new JLabel("원금을 입력하시오 :");
+		text = new JTextField(15);
+		text.addActionListener(listener);
+		panel.add(label1);
+		panel.add(text);
+		
+		label2 = new JLabel("이율을 입력하시오 :");
+		text2 = new JTextField(15);
+		text2.addActionListener(listener);
+		panel.add(label2);
+		panel.add(text2);
+		
+		button = new JButton("변환");
+		button.addActionListener(listener);
+		result = new JTextField(15);
+		result.setEditable(false);
+		panel.add(button);
+		panel.add(result);
+		
+		
+		
+		add(panel);
+		setVisible(true);
+	}
+	
+	private class ButtonListener implements ActionListener{
+		public void actionPerformed(ActionEvent e) {
+			if(e.getSource()== button || (e.getSource()==text && e.getSource()==text2)) {
+				String name = text.getText();
+				String name1 = text2.getText();
+				int value = Integer.parseInt(name);
+				int value1 = Integer.parseInt(name1);
+				result.setText("이자는 연 " + 100* value * value1 +"원 입니다.");
+				text.requestFocus();
+				text2.requestFocus();
+			}
+		}
+	}
+
+	public static void main(String[] args) {
+		EX4 t = new EX4();
+	}
+}

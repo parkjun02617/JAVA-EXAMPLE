@@ -1,0 +1,27 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Scanner;
+public class Joon6 {
+public static void main(String[]args){
+	Scanner scan=new Scanner(System.in);
+	int size;
+	int sum=0;
+	double average=0.0;
+	System.out.println("입력할 성적의 개수 :");
+	size = scan.nextInt();
+	int [] s= new int[size];
+	
+	for(int i=0; i<s.length; i++){
+	System.out.print("성적을 입력하세요 : ");
+	s[i]=scan.nextInt();
+	sum+=s[i];
+	average= (double) s[i]/i;
+	}
+	System.out.print("\n합계 : "+sum);
+	System.out.print("평균 : " +average);
+}
+}
+
+	
+	
+// 2016113791 박준영 12번문제 

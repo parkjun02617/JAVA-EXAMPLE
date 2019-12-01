@@ -1,0 +1,35 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+public class PE93 extends JFrame implements ActionListener{
+	private JButton b;
+	JTextField field1,field2;
+	public PE93() {
+		setSize(500,150);
+		setTitle("KM변환");
+		b= new JButton("변환");
+		JPanel panel1=new JPanel();
+		JPanel panel2=new JPanel();
+		field1=new JTextField(15);
+		field2=new JTextField(15);
+		JLabel label1=new JLabel("마일을 입력하시오.");
+		field1.addActionListener(this);
+		field2.addActionListener(this);
+		field2.setEditable(false);
+		b.addActionListener(this);
+		panel1.add(label1);
+		panel1.add(field1);
+		panel1.add(field2);
+		panel2.add(b);	
+		add(panel1,BorderLayout.NORTH);
+		add(panel2,BorderLayout.SOUTH);
+		setVisible(true);}
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource()==b) {
+			String mile=field1.getText();
+			int value=Integer.parseInt(mile);
+			field2.setText(1.609344*value+"KM");
+			field2.requestFocus();}}
+public static void main(String[] args) {
+	PE93 f=new PE93();}}

@@ -1,0 +1,38 @@
+package study;
+import java.util.Scanner;
+
+class User{
+	String userId,password;
+	static int count=0;
+	
+	public User(String userId, String password) {
+		this.userId=userId;
+		this.password = password;
+	}	
+}
+ 
+
+
+
+public class UserEx {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		User[] list = new User[10];while(true) {
+		System.out.println("========================");
+		System.out.print("1.Sign UP" + "\n" + "2.Login"+"\n"+ "3.Print All Users"+"\n" + "4.Exit"+"\n");
+		System.out.println("========================");
+		System.out.print("번호를 입력하시오 :" );
+		 int number = sc.nextInt();
+		switch(number) {
+		case 1:User.count++;
+		System.out.print("ID: ");
+		String userId = sc.nextLine(); 
+		System.out.print("password: ");
+		String password = sc.nextLine();
+		list[User.count] = new User(userId,password); break;
+		case 3:for(int i=1; i<=User.count; i++)
+			System.out.println("{"+list[i].userId+" " +list[i].password  +"}");break;
+		}
+	}}
+
+}

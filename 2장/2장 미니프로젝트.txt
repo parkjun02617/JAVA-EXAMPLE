@@ -1,0 +1,30 @@
+package name;
+import java.util.Scanner;
+
+
+public class sss {
+	
+	public static void main(String args[])
+	{
+	double c;
+	double f;
+	
+		Scanner input = new Scanner(System.in);
+		System.out.print("È­¾¾¿Âµµ¸¦ ÀÔ·ÂÇÏ½Ã¿À :");
+	    f=input.nextDouble();
+	    c=(double)5.0/9.0*(f-32);    
+	    System.out.print("¼·¾¾¿Âµµ´Â " + c);
+	    
+	    
+	    
+	    
+	    
+	 
+	}
+
+		
+		
+	}
+	
+
+

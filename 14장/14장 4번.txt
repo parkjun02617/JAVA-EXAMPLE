@@ -1,0 +1,55 @@
+public class ThreadEx {
+    public static void main(String[] args) {
+       Bus bus1 = new Bus();
+   
+       Thread t1 = new Thread(bus1,"Thread-0"); 
+       Thread t2 = new Thread(bus1,"Thread-1"); 
+       Thread t3 = new Thread(bus1,"Thread-2"); 
+       
+      t1.start();
+      t2.start();
+      t3.start();
+      
+    }
+}
+
+ class Bus implements Runnable{
+
+   
+    int TestNum=0;
+    int possible=20;
+        
+    public synchronized  void run() // 동기화를 했기 때문에 해당 실행이 끝나고 나서 다음 쓰레드가 실행.
+    {
+
+   int require = (int)(Math.random()*10);
+   if(possible>=require){
+   try {
+      Thread thread = Thread.currentThread();
+      System.out.println("------------------------------");
+      System.out.println(thread.getName() + "가 들어왔음.");
+      Thread.sleep(500);
+      System.out.print("가능한 좌석수 : " + possible +" ");
+      System.out.print("요청 좌석수 : " + require + "\n"); 
+      System.out.println(require + "좌석이 예약되었음.");
+      System.out.println(thread.getName() + "가 나갑니다.");Thread.sleep(500);   
+      possible -=require;
+      } catch (InterruptedException e) {         
+         e.printStackTrace();
+      } }
+   else
+      try{Thread thread = Thread.currentThread();
+      System.out.println("------------------------------");
+      System.out.println(thread.getName() + "가 들어왔음.");
+      Thread.sleep(500);
+      System.out.print("가능한 좌석수 : " + possible +" ");
+      System.out.print("요청 좌석수 : " + require + "\n"); 
+      System.out.println(require + "좌석이 예약이 불가능합니다..");
+      System.out.println(thread.getName() + "가 나갑니다.");Thread.sleep(500);      
+      } catch (InterruptedException e) {         
+         e.printStackTrace();
+      
+      } 
+}
+    }
+ 

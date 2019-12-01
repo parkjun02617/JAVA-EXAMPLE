@@ -1,0 +1,37 @@
+import java.util.*;
+
+class Dictionary{
+	String word;
+	String mean;
+	public Dictionary(String word, String mean) {
+		this.mean =mean;
+		this.word =word;
+	}
+	public String toString() {
+		return mean;
+	}
+}
+public class PE126 {
+	public static void main(String[] args) {
+		
+		
+		Map<String,Dictionary> dc=new HashMap<String,Dictionary>();
+		dc.put("이기영", new Dictionary("이기영","븅딱"));
+		dc.put("경아", new Dictionary("경아","이기영썸녀"));
+		dc.put("수민", new Dictionary("수민","이기영덕후"));
+		dc.put("나현", new Dictionary("나현","이기영짝사랑녀"));
+		
+		Scanner sc=new Scanner(System.in);
+		System.out.print("이름을 입력하시오:");
+		String a=sc.nextLine();
+			
+		System.out.println("이색기는 "+dc.get(a));
+			
+		
+		
+	}
+}
+
+
+
+

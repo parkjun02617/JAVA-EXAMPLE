@@ -1,0 +1,23 @@
+package joon;
+
+public class J11{
+	String breed;
+	String color;
+	int age;
+	
+	
+	
+	void print() {
+		System.out.printf(breed+color+age);
+	}
+	public J11(String a, String b, int c) {
+		breed = a;
+		color = b;
+		age = c;
+	}
+	
+	public static void main(String[] args) {
+		J11 obj=new J11("york","orange",1);
+		obj.print();
+	}
+}
